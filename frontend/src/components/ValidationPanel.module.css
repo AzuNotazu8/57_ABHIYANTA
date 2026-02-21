@@ -1,0 +1,136 @@
+.panel {
+  background: var(--navy-mid);
+  border: 1px solid var(--navy-border);
+  padding: 24px;
+}
+
+.panelHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.badge {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  padding: 3px 8px;
+  border: 1px solid var(--navy-border);
+  color: var(--text-muted);
+}
+
+.empty {
+  color: var(--text-muted);
+  font-size: 13px;
+  padding: 16px 0;
+}
+
+.scores {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.scoreBlock { display: flex; flex-direction: column; gap: 6px; }
+
+.scoreHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.scoreLabel {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-secondary);
+}
+
+.scoreAcc {
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.scoreBar {
+  height: 4px;
+  background: var(--navy-border);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.scoreFill {
+  height: 100%;
+  border-radius: 2px;
+  transition: width 1s cubic-bezier(0.4,0,0.2,1);
+}
+
+.scoreMeta {
+  display: flex;
+  gap: 16px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--text-muted);
+}
+
+.scoreMeta b {
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.note {
+  font-size: 11px;
+  color: var(--text-muted);
+  line-height: 1.6;
+  border-left: 2px solid var(--teal-muted);
+  padding-left: 10px;
+  margin-bottom: 20px;
+}
+
+.table {
+  overflow-x: auto;
+}
+
+.tableHead, .tableRow {
+  display: grid;
+  grid-template-columns: 60px repeat(6, 1fr);
+  gap: 8px;
+  padding: 7px 4px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+}
+
+.tableHead {
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  border-bottom: 1px solid var(--navy-border);
+  margin-bottom: 4px;
+}
+
+.tableRow {
+  color: var(--text-secondary);
+  border-bottom: 1px solid rgba(30, 58, 82, 0.4);
+}
+
+.tableRow:hover {
+  background: rgba(31, 111, 120, 0.05);
+}
+
+.yearCell {
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.errCell {
+  color: var(--amber);
+}

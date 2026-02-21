@@ -1,0 +1,209 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 14px 28px;
+  background: #1a1610;
+  border-top: 1px solid #3a3020;
+  height: 100%;
+}
+
+.yearBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 80px;
+  flex-shrink: 0;
+}
+
+.yearLabel {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.15em;
+  color: var(--earth-muted);
+}
+
+.yearValue {
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--cream);
+  line-height: 1;
+}
+
+.yearRange {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  color: var(--cream-muted);
+  margin-top: 2px;
+}
+
+.centre {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--earth-warm);
+  border: 1px solid var(--earth-border);
+  color: var(--cream-dim);
+  transition: all 0.15s;
+}
+
+.btn:hover {
+  background: var(--earth-border);
+  color: var(--cream);
+}
+
+.playBtn {
+  width: 44px;
+  height: 44px;
+  background: var(--amber);
+  border-color: var(--amber-light);
+  color: #fff;
+}
+
+.playBtn:hover {
+  background: var(--amber-light);
+}
+
+.sliderWrap {
+  position: relative;
+  width: 100%;
+}
+
+.sliderTrack {
+  position: relative;
+  height: 4px;
+  background: var(--earth-warm);
+  border-radius: 2px;
+  margin-bottom: 6px;
+}
+
+.sliderFill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: var(--amber);
+  border-radius: 2px;
+  transition: width 0.3s ease;
+  pointer-events: none;
+}
+
+.sliderThumb {
+  position: absolute;
+  top: 50%;
+  width: 12px;
+  height: 12px;
+  background: var(--amber-light);
+  border: 2px solid #12110e;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: left 0.3s ease;
+  pointer-events: none;
+}
+
+.sliderInput {
+  position: absolute;
+  top: -6px;
+  left: 0;
+  width: 100%;
+  height: 16px;
+  opacity: 0;
+  z-index: 10;
+  -webkit-appearance: none;
+}
+
+.tickRow {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.tick {
+  font-family: var(--font-mono);
+  font-size: 8px;
+  color: var(--cream-muted);
+  background: none;
+  border: none;
+  padding: 0;
+  min-width: 24px;
+  text-align: center;
+  transition: color 0.15s;
+  cursor: pointer;
+}
+
+.tick:hover { color: var(--amber); }
+
+.tickActive {
+  color: var(--amber);
+  font-weight: 700;
+}
+
+.speedBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
+  min-width: 70px;
+  flex-shrink: 0;
+}
+
+.speedLabel {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  color: var(--earth-muted);
+}
+
+.speedBtns {
+  display: flex;
+  gap: 4px;
+}
+
+.speedBtn {
+  padding: 3px 8px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  background: var(--earth-warm);
+  border: 1px solid var(--earth-border);
+  color: var(--cream-dim);
+  border-radius: 2px;
+  transition: all 0.15s;
+}
+
+.speedBtn:hover { color: var(--cream); border-color: var(--amber); }
+
+.speedActive {
+  background: var(--amber-pale);
+  border-color: var(--amber);
+  color: var(--amber-light);
+}
+
+.playingPulse {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  color: var(--amber);
+  animation: blink 1.2s ease-in-out infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}

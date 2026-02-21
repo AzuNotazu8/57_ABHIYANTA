@@ -1,0 +1,43 @@
+:root {
+  --navy: #0B1C2D;
+  --navy-mid: #0f2236;
+  --navy-light: #152d45;
+  --navy-border: #1e3a52;
+  --teal: #1F6F78;
+  --teal-light: #2a8f9a;
+  --teal-muted: #174f56;
+  --teal-glow: rgba(31, 111, 120, 0.15);
+  --amber: #C8862A;
+  --amber-light: #e09a35;
+  --sage: #4a7c5e;
+  --sage-light: #5a9670;
+  --rose: #8B3A4A;
+  --rose-light: #a8475a;
+  --text-primary: #e8f0f5;
+  --text-secondary: #7fa3be;
+  --text-muted: #4a6b84;
+  --font-display: 'Syne', sans-serif;
+  --font-body: 'DM Sans', sans-serif;
+  --font-mono: 'DM Mono', monospace;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { font-size: 16px; }
+
+body {
+  background: var(--navy);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-weight: 300;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+#root { min-height: 100vh; }
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--navy); }
+::-webkit-scrollbar-thumb { background: var(--navy-border); border-radius: 3px; }
+
+button { cursor: pointer; font-family: var(--font-body); }

@@ -1,0 +1,150 @@
+.panel {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  background: #16140f;
+  border-left: 1px solid #3a3020;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.empty {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--cream-muted);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  text-align: center;
+  padding: 24px;
+}
+
+.panelHead {
+  padding: 18px 18px 12px;
+  border-bottom: 1px solid #2a2318;
+}
+
+.yearStamp {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.yearNum {
+  font-family: var(--font-display);
+  font-size: 38px;
+  font-weight: 700;
+  color: var(--cream);
+  line-height: 1;
+}
+
+.projBadge {
+  font-family: var(--font-mono);
+  font-size: 8px;
+  letter-spacing: 0.1em;
+  padding: 2px 6px;
+  background: rgba(196,122,42,0.15);
+  border: 1px solid rgba(196,122,42,0.3);
+  color: var(--amber);
+}
+
+.panelSub {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  color: var(--cream-muted);
+  letter-spacing: 0.08em;
+  margin-top: 4px;
+}
+
+.rings {
+  display: flex;
+  justify-content: space-around;
+  padding: 16px 10px;
+}
+
+.ring {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.ringLabel {
+  font-family: var(--font-mono);
+  font-size: 8px;
+  letter-spacing: 0.1em;
+  color: var(--cream-muted);
+  text-transform: uppercase;
+}
+
+.divider {
+  height: 1px;
+  background: #2a2318;
+  margin: 0 18px;
+}
+
+.bars {
+  padding: 14px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.bar { display: flex; flex-direction: column; gap: 5px; }
+
+.barTop {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.barIcon { font-size: 12px; }
+
+.barLabel {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  color: var(--cream-dim);
+  flex: 1;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.barVal {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.barTrack {
+  height: 3px;
+  background: #2a2318;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.barFill {
+  height: 100%;
+  border-radius: 2px;
+  transition: width 0.8s cubic-bezier(0.4,0,0.2,1);
+}
+
+.meta {
+  padding: 12px 18px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.metaRow {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-mono);
+  font-size: 9px;
+  color: var(--cream-muted);
+}
+
+.metaRow span:last-child {
+  color: var(--cream-dim);
+}

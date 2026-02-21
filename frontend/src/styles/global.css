@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Karla:wght@300;400;500&family=Courier+Prime:wght@400;700&display=swap');
+
+:root {
+  --earth-deep:    #12110e;
+  --earth-dark:    #1c1a14;
+  --earth-mid:     #2a2318;
+  --earth-warm:    #3a3020;
+  --earth-border:  #4a3e28;
+  --earth-muted:   #6b5e42;
+
+  --forest-deep:   #1e3020;
+  --forest:        #2d4a2a;
+  --forest-light:  #3d6438;
+
+  --water-deep:    #152a3a;
+  --water:         #1e4060;
+  --water-flood:   #2d6b8a;
+  --water-light:   rgba(45, 107, 138, 0.6);
+
+  --glacier:       #8bbcce;
+  --glacier-melt:  rgba(139, 188, 206, 0.3);
+
+  --amber:         #c47a2a;
+  --amber-light:   #d9923a;
+  --amber-pale:    rgba(196, 122, 42, 0.15);
+
+  --tiger:         #d4682a;
+  --deer:          #7aac54;
+  --croc:          #4a7a5a;
+
+  --danger:        #a84030;
+  --danger-pale:   rgba(168, 64, 48, 0.15);
+
+  --cream:         #d4c9b0;
+  --cream-dim:     #9a8e78;
+  --cream-muted:   #5a5040;
+
+  --font-display:  'Playfair Display', Georgia, serif;
+  --font-body:     'Karla', sans-serif;
+  --font-mono:     'Courier Prime', 'Courier New', monospace;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { font-size: 16px; }
+
+body {
+  background: var(--earth-deep);
+  color: var(--cream);
+  font-family: var(--font-body);
+  font-weight: 400;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+#root { height: 100vh; display: flex; flex-direction: column; }
+
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: var(--earth-dark); }
+::-webkit-scrollbar-thumb { background: var(--earth-border); border-radius: 2px; }
+
+button { cursor: pointer; font-family: var(--font-body); border: none; background: none; }
+input[type=range] { cursor: pointer; }

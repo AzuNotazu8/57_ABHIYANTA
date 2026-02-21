@@ -1,0 +1,144 @@
+.wrapper {
+  background: var(--navy-mid);
+  border: 1px solid var(--navy-border);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.note {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--text-muted);
+}
+
+.controls {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.toggle {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  background: transparent;
+  border: 1px solid var(--navy-border);
+  color: var(--text-muted);
+  font-size: 11px;
+  font-family: var(--font-mono);
+  transition: all 0.2s;
+}
+
+.toggle:hover {
+  border-color: var(--zone-color, var(--teal));
+  color: var(--text-secondary);
+}
+
+.toggle.on {
+  border-color: var(--zone-color, var(--teal));
+  background: rgba(0,0,0,0.2);
+  color: var(--text-primary);
+}
+
+.toggleDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.mapArea {
+  width: 100%;
+  border: 1px solid var(--navy-border);
+  overflow: hidden;
+}
+
+.svg {
+  width: 100%;
+  display: block;
+}
+
+.zoneRect {
+  transition: opacity 0.4s ease;
+}
+
+.legend {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.legendItem {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+.legendDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-top: 3px;
+  flex-shrink: 0;
+}
+
+.legendLabel {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  display: block;
+  margin-bottom: 2px;
+}
+
+.legendDesc {
+  font-size: 11px;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.liveReadout {
+  border-top: 1px solid var(--navy-border);
+  padding-top: 14px;
+}
+
+.readoutLabel {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  display: block;
+  margin-bottom: 8px;
+}
+
+.readoutRow {
+  display: flex;
+  gap: 20px;
+  font-size: 11px;
+  color: var(--text-secondary);
+  font-family: var(--font-mono);
+  flex-wrap: wrap;
+}
+
+.readoutRow b {
+  color: var(--text-primary);
+  font-weight: 500;
+  margin-left: 6px;
+}
