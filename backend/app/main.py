@@ -6,7 +6,7 @@ from slowapi.errors import RateLimitExceeded
 from app.core.config import settings
 from app.core.middleware import limiter
 from app.db.database import SessionLocal
-from app.routes import climate, simulation, analysis
+from app.routes import climate, simulation, analysis, report
 from app.services.seed_data import seed_climate_data
 from app.services.seed_projections import seed_projection_data
 
@@ -26,6 +26,7 @@ app.add_middleware(
 app.include_router(climate.router, prefix="/api")
 app.include_router(simulation.router, prefix="/api")
 app.include_router(analysis.router, prefix="/api")
+app.include_router(report.router, prefix="/api")
 
 
 @app.on_event("startup")

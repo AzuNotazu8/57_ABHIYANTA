@@ -2,6 +2,8 @@ import { useState, useEffect, useRef, useCallback } from 'react'
 import InteractiveMap from './components/InteractiveMap'
 import TimelineControls from './components/TimelineControls'
 import YearPanel from './components/YearPanel'
+import ReportPanel from './components/ReportPanel'
+import Dashboard from './pages/Dashboard'
 import { useSimulation } from './hooks/useSimulation'
 import { api } from './api/client'
 import styles from './App.module.css'
@@ -11,6 +13,8 @@ export default function App() {
   const [currentIndex, setCurrentIndex] = useState(0)
   const [playing, setPlaying] = useState(false)
   const [speed, setSpeed] = useState(1)
+  const [showReport, setShowReport] = useState(false)
+  const [activePage, setActivePage] = useState('simulation')
   const intervalRef = useRef(null)
 
   const years = timeline.map(r => r.year)
@@ -95,6 +99,24 @@ export default function App() {
           {timeline.length === 0 && !running && (
             <span className={styles.hintMsg}>No data — auto-running simulation…</span>
           )}
+          <nav className={styles.tabNav}>
+            <button
+              className={`${styles.tabBtn} ${activePage === 'simulation' ? styles.tabActive : ''}`}
+              onClick={() => setActivePage('simulation')}
+            >Simulation</button>
+            <button
+              className={`${styles.tabBtn} ${activePage === 'dashboard' ? styles.tabActive : ''}`}
+              onClick={() => setActivePage('dashboard')}
+            >Dashboard</button>
+          </nav>
+          <button
+            className={styles.reportBtn}
+            onClick={() => setShowReport(true)}
+            disabled={timeline.length === 0}
+            title="Generate AI conservation report"
+          >
+            📋 AI Report
+          </button>
           <button
             className={`${styles.runBtn} ${running ? styles.runBtnActive : ''}`}
             onClick={() => runAll('baseline')}
@@ -108,29 +130,39 @@ export default function App() {
       </header>
 
       {/* ── Main layout: map + right panel ── */}
-      <div className={styles.body}>
-        <div className={styles.mapArea}>
-          <InteractiveMap data={currentData} year={currentData?.year ?? ''} />
+      {activePage === 'simulation' ? (
+        <div className={styles.body}>
+          <div className={styles.mapArea}>
+            <InteractiveMap data={currentData} year={currentData?.year ?? ''} />
+          </div>
+          <div className={styles.sidePanel}>
+            <YearPanel data={currentData} isProjection={isProjection} />
+          </div>
         </div>
-        <div className={styles.sidePanel}>
-          <YearPanel data={currentData} isProjection={isProjection} />
+      ) : (
+        <div className={styles.body}>
+          <Dashboard />
         </div>
-      </div>
+      )}
 
       {/* ── Timeline controls ── */}
-      <div className={styles.controls}>
-        <TimelineControls
-          years={years}
-          currentIndex={currentIndex}
-          playing={playing}
-          speed={speed}
-          onIndexChange={i => { stopPlay(); setCurrentIndex(i) }}
-          onPlay={handlePlay}
-          onPause={stopPlay}
-          onRewind={handleRewind}
-          onSpeedChange={setSpeed}
-        />
-      </div>
+      {activePage === 'simulation' && (
+        <div className={styles.controls}>
+          <TimelineControls
+            years={years}
+            currentIndex={currentIndex}
+            playing={playing}
+            speed={speed}
+            onIndexChange={i => { stopPlay(); setCurrentIndex(i) }}
+            onPlay={handlePlay}
+            onPause={stopPlay}
+            onRewind={handleRewind}
+            onSpeedChange={setSpeed}
+          />
+        </div>
+      )}
+
+      {showReport && <ReportPanel onClose={() => setShowReport(false)} />}
 
     </div>
   )
