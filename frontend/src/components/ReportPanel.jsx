@@ -10,7 +10,7 @@ function parseReport(text) {
     if (line.startsWith('## ')) {
       if (current) sections.push(current)
       current = { heading: line.replace('## ', '').trim(), body: [] }
-    } else if (current) {
+    } else if (current) { 
       if (line.trim()) current.body.push(line.trim())
     }
   }
